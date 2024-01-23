@@ -21,16 +21,20 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Marvel Comics</h1>
-        <ul>
-          {comics.map((comic) => (
-            <li key={comic.id}>{comic.title}</li>
-          ))}
-        </ul>
-      </header>
+        <header className="App-header">
+            <h1>Marvel Comics</h1>
+            <ul>
+                {comics.map((comic) => (
+                      <li key={comic.id}>
+                        <h3 className='comic-title'>{comic.title}</h3>
+                        {comic.imageUrl && <img className='card-image' src={comic.imageUrl} alt={comic.title} />}
+                        <p>{comic.description}</p>
+                    </li>
+                ))}
+            </ul>
+        </header>
     </div>
-  );
+);
 }
 
 export default App;
